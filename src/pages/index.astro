@@ -1,16 +1,83 @@
 ---
-
+const profileImage =
+  "https://st3.depositphotos.com/15648834/17930/v/450/depositphotos_179308454-stock-illustration-unknown-person-silhouette-glasses-profile.jpg";
 ---
 
 <html lang="en">
-	<head>
+  <head>
 		<meta charset="utf-8" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
 		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+  </head>
+  	<body>
+    	<div class="profile">
+      	<img src={profileImage} alt="Employee" width="100px" height="100px" class="profile__picture" />
+				<div class="profile__details">
+					<h1>John Doe</h1>
+					<h2>Software Engineer</h2>
+					<p>Building highly scalable applications</p>
+				</div>
+    	</div>
+  	</body>
 </html>
+
+<style>
+	.profile {
+	  display: flex;
+	  align-items: flex-start;
+	  flex-wrap: wrap;
+	  padding: 1rem 0 3rem 0;
+	}
+  
+	.profile__details {
+	  flex: 1 0 300px;
+	}
+  
+	.profile__details > h1 {
+	  margin-top: 0;
+	}
+  
+	.profile__picture {
+	  border-radius: 50%;
+	  margin: 0 2rem 1rem 0;
+	}
+  
+	.featured-blogs {
+	  margin: 0;
+	  padding: 3rem 0 0 0;
+	}
+	.featured-blogs__title {
+	  font-size: 2rem;
+	  color: var(--gray-900);
+	}
+  
+	.featured-blogs__description {
+	  margin-top: -1.2rem;
+	}
+  
+	.blogs {
+	  font-size: 1rem;
+	  font-weight: 500;
+	}
+  
+	.blogs__list {
+	  border-bottom: 1px solid;
+	  border-color: var(--gray-200);
+	}
+  
+	.blog__link {
+	  opacity: 1;
+	  height: 100%;
+	  display: block;
+	  padding: 1rem 0;
+	  color: var(--gray-200);
+	  text-decoration: none;
+	  transition: opacity 0.2s ease-in-out;
+	}
+  
+	.blog__link:hover {
+	  opacity: 0.7;
+	}
+</style>
